@@ -275,10 +275,10 @@
 (def expr-right (make-bin-expr apply-right))
 
 (def *expr (expr-left (+char "+-")
-                      (expr-left (+char "*/")
-                                 (expr-right (+or (*string "**")
-                                                  (*string "//"))
-                                             (make-unary-expr (*string "negate") *prime)))))
+           (expr-left (+char "*/")
+           (expr-right (+or (*string "**")
+                             (*string "//"))
+           (make-unary-expr (*string "negate") *prime)))))
 
 (def *bracket (+seqn 1 *ws (+char "(") *expr (+char ")") *ws))
 
